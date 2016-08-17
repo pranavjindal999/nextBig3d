@@ -1,0 +1,18 @@
+<table>
+  <tr>
+  	<th>Details</th>
+    <th ng-repeat="thead in theads">{{thead}}</th>
+  </tr>
+  <tr ng-repeat="row in tableData">
+  	<td><button ng-click='showDetails(row)'>Details</button></td>
+    <td ng-repeat="value in row">{{value}}</td>
+  </tr>
+</table>
+
+<div ng-if="detailsView"  style="background-color:white;position:relative;top:-200px;left:100px;width:200px">
+	Extra Details can be fetched here:
+	<ul>
+		<li ng-repeat="value in row">{{value}}</li>
+	</ul>
+	<button ng-click='closeDetails()'>Close</button>
+</div>
